@@ -1,29 +1,25 @@
 import Vue from 'vue'
-import Vuex from 'vuex';
 import App from './App.vue'
 
 import './index.css';
 
 import { library  } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faCalendarDays, faPenToSquare, faLessThan, faGreaterThan, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-Vue.use(Vuex);
+import store from './store';
 
 library.add(faBars);
 library.add(faXmark);
+library.add(faCalendarDays);
+library.add(faPenToSquare);
+library.add(faLessThan);
+library.add(faGreaterThan);
+library.add(faTrash);
+
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false
-
-const store = new Vuex.Store({
-  state: { count: 0 }, 
-  mutations: {
-    increment (state) { 
-      state.count++;
-    }
-  }
-})
 
 new Vue({
   store: store,
