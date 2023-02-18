@@ -18,7 +18,7 @@
 - VueJS 2 must be used. (checked)
 - VueX must be used. (checked)
 - TailwindCSS must be used. (checked)
-- Do form validations.
+- Do form validations. (checked)
 - Demonstrate mobile responsive UI/UX design.
 - Please provide brief "read me" describing how to run your application.
 

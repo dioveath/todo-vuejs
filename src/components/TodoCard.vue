@@ -66,6 +66,7 @@ export default {
         duplicateTodo(){
             // eslint-disable-next-line no-unused-vars
             const { id, ...copyTodo } = this.todo;
+            copyTodo.isComplete = false;
             this.addTodo(copyTodo);
         },
         changeComplete() {

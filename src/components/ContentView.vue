@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex flex-wrap px-4 md:px-32 gap-4">
-        <Createtodo @toggle-event="toggleShow" :is-open="isOpen" />
+        <CreateTodo @toggle-event="toggleShow" v-if="isOpen"/>
         <div class="w-full h-full flex-1">
             <div class="w-full min-w-max flex flex-wrap justify-between items-center my-2 gap-4">
                 <h2 class="font-bold text-lg"> TODOS </h2>
@@ -8,14 +8,12 @@
             </div>
             <div class="w-full flex flex-wrap justify-between items-center my-2 gap-4">
                 <input type="text" class="text-black bg-gray-300 rounded-sm flex-1 px-4 py-2"
+                    v-model="search"
                     placeholder="Search for todos..!">
-                <button class="text-white bg-blue-500 rounded-sm px-4 py-2"> Search </button>
             </div>
             <div class="w-full flex flex-wrap justify-between items-center my-2 gap-4 text-sm text-gray-600">
                 <div class="flex items-center gap-4">
-                    <font-awesome-icon icon="fa-solid fa-less-than" />
                     <p class=""> Date: 02/15/2023 </p>
-                    <font-awesome-icon icon="fa-solid fa-greater-than" />
                 </div>
 
                 <select name="filter" id="filterTodos" v-model="filter" @change="onFilterChange">
@@ -42,19 +40,20 @@
 <script>
 import { mapGetters, mapState } from 'vuex';
 import TodoCard from './TodoCard.vue';
-import Createtodo from './CreateTodo.vue';
+import CreateTodo from './CreateTodo.vue';
 
 export default {
     name: 'ContentView',
     components: {
         TodoCard,
-        Createtodo
+        CreateTodo
     },
     data: function () {
         return {
             isOpen: false,
             displayTodos: [],
-            filter: "all"
+            filter: "all",
+            search: ""
         }
     },
     mounted: function () {
@@ -65,6 +64,11 @@ export default {
             immediate: true,
             deep: true,
             handler(){ this.onFilterChange(); }
+        },
+        search: {
+            handler(){
+                this.searchTodo();
+            }
         }
     },
     computed: {
@@ -89,6 +93,10 @@ export default {
                     this.displayTodos = this.todos;
                     return;
             }
+        },
+        searchTodo(){
+            this.onFilterChange();
+            this.displayTodos = this.displayTodos.filter(t => t.title.toLowerCase().search(this.search.toLowerCase()) !== -1);
         },
         toggleShow() {
             this.isOpen = !this.isOpen;
