@@ -4,14 +4,14 @@
 - Option to Create To Do task. (done)
 - Option to Update To Do task. (done)
 - Option to Delete To Do task (confirmation modal / pop-up). (done)
-- Option to View all To Do tasks (only pending).
+- Option to View all To Do tasks (only pending). (done)
 
 ### Other Features:
-- Mark task as complete.
+- Mark task as complete. (done)
 - Duplicate the task.
 - Set due date for the task.
-- Option to view all the completed tasks.
-- Task if past the due date and not marked as complete (highlight task in red). 
+- Option to view all the completed tasks. (done)
+- Task if past the due date and not marked as complete (highlight task in red).
 - Demonstrate 
 
 ### Things to note:

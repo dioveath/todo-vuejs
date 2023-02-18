@@ -18,28 +18,29 @@
                     <font-awesome-icon icon="fa-solid fa-greater-than" />
                 </div>
 
-                <select name="filter" id="filterTodos">
+                <select name="filter" id="filterTodos" v-model="filter" @change="onFilterChange">
+                    <option value="all">All</option>
                     <option value="pending">Pending</option>
                     <option value="completed">Completed</option>
-                    <option value="completed">Past Due</option>
+                    <option value="due">Past Due</option>
                 </select>
             </div>
             <div class="w-full flex flex-col">
-                <TodoCard v-for="todo in todos" v-bind:key="todo.id" :todo="todo" />
+                <TodoCard v-for="todo in displayTodos" v-bind:key="todo.id" :todo="todo" />
             </div>
         </div>
         <div class="w-full min-w-max lg:flex-[0.25]">
             <h2> Summary </h2>
             <p> Total Todos: {{ totalTodos }}</p>
-            <p> Pending Todos: </p>
-            <p> Completed Todos: </p>
-            <p> Past Due Todos: </p>
+            <p> Pending Todos: {{ pendingTodos.length }}</p>
+            <p> Completed Todos: {{ completedTodos.length }}</p>
+            <p> Past Due Todos: {{ dueTodos.length }}</p>
         </div>
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import TodoCard from './TodoCard.vue';
 import Createtodo from './CreateTodo.vue';
 
@@ -51,14 +52,44 @@ export default {
     },
     data: function () {
         return {
-            isOpen: false
+            isOpen: false,
+            displayTodos: [],
+            filter: "all"
+        }
+    },
+    mounted: function () {
+        this.displayTodos = this.todos;
+    },
+    watch: { 
+        todos: { 
+            immediate: true,
+            deep: true,
+            handler(){ this.onFilterChange(); }
         }
     },
     computed: {
         ...mapState(['todos']),
-        totalTodos() { return this.$store.state.todos.length; }
+        ...mapGetters(['pendingTodos', 'dueTodos', 'completedTodos']),
+        totalTodos() { return this.$store.state.todos.length; },
     },
     methods: {
+        onFilterChange() {
+            switch (this.filter) {
+                case 'completed':
+                    this.displayTodos = this.completedTodos;
+                    return;
+                case 'pending':
+                    this.displayTodos = this.pendingTodos;
+                    return;
+                case 'due':
+                    this.displayTodos = this.dueTodos;
+                    return;
+                case 'all':
+                default:
+                    this.displayTodos = this.todos;
+                    return;
+            }
+        },
         toggleShow() {
             this.isOpen = !this.isOpen;
         }

@@ -42,3 +42,66 @@ Info 9    [12:35:51.494] Config: c:/Interview/The Big Phone Store/todo/jsconfig.
  }
 }
 Info 10   [12:35:51.602] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 11   [12:35:54.886] Finishing updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 3282.9092999994755ms
+Info 12   [12:35:54.886] Project 'c:/Interview/The Big Phone Store/todo/jsconfig.json' (Configured)
+Info 13   [12:35:54.886] 	Files (332)
+
+Info 14   [12:35:54.886] -----------------------------------------------
+Info 15   [12:35:54.918] AutoImportProviderProject: found 3 root files in 3 dependencies in 27.12949998676777 ms
+Info 16   [12:35:54.920] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 17   [12:35:55.163] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 242.58439999818802ms
+Info 18   [12:35:55.163] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 19   [12:35:55.163] 	Files (6)
+
+Info 20   [12:35:55.163] -----------------------------------------------
+Info 21   [12:36:00.416] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 22   [12:36:00.745] Finishing updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Version: 2 structureChanged: true structureIsReused:: Not Elapsed: 329.28350000083447ms
+Info 23   [12:36:00.745] Project 'c:/Interview/The Big Phone Store/todo/jsconfig.json' (Configured)
+Info 24   [12:36:00.745] 	Files (339)
+
+Info 25   [12:36:00.745] -----------------------------------------------
+Info 26   [12:36:00.745] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 27   [12:36:00.745] 	Files (6)
+
+Info 28   [12:36:00.745] -----------------------------------------------
+Info 29   [12:36:00.750] DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/.git/index.lock :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
+Info 30   [12:36:00.750] Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Detected ignored path: c:/interview/the big phone store/todo/.git/index.lock
+Info 31   [12:36:00.750] Elapsed:: 0.6132999956607819ms DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/.git/index.lock :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
+Info 32   [12:36:00.751] DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/.git/index.lock :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
+Info 33   [12:36:00.751] Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Detected ignored path: c:/interview/the big phone store/todo/.git/index.lock
+Info 34   [12:36:00.751] Elapsed:: 0.08089999854564667ms DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/.git/index.lock :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
+Info 35   [12:36:01.171] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 36   [12:36:01.255] Finishing updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Version: 3 structureChanged: true structureIsReused:: Not Elapsed: 84.23600000143051ms
+Info 37   [12:36:01.255] Project 'c:/Interview/The Big Phone Store/todo/jsconfig.json' (Configured)
+Info 38   [12:36:01.255] 	Files (333)
+
+Info 39   [12:36:01.255] -----------------------------------------------
+Info 40   [12:36:01.255] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 41   [12:36:01.255] 	Files (6)
+
+Info 42   [12:36:01.255] -----------------------------------------------
+Info 43   [12:36:03.415] Before ensureProjectForOpenFiles:
+Info 44   [12:36:03.415] After ensureProjectForOpenFiles:
+Info 45   [12:36:03.415] got projects updated in background, updating diagnostics for c:/Interview/The Big Phone Store/todo/src/store/index.js
+Info 46   [12:36:56.852] DirectoryWatcher:: Triggered with c:/Interview/The Big Phone Store/todo/src/#App.vue# :: WatchInfo: c:/Interview/The Big Phone Store/todo/src 1 undefined Project: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Failed Lookup Locations
+Info 47   [12:36:56.855] Elapsed:: 2.67179998755455ms DirectoryWatcher:: Triggered with c:/Interview/The Big Phone Store/todo/src/#App.vue# :: WatchInfo: c:/Interview/The Big Phone Store/todo/src 1 undefined Project: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Failed Lookup Locations
+Info 48   [12:36:56.856] DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/src/#App.vue# :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
+Info 49   [12:36:56.856] Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Detected file add/remove of non supported extension: c:/interview/the big phone store/todo/src/#App.vue#
+Info 50   [12:36:56.856] Elapsed:: 0.32510000467300415ms DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/src/#App.vue# :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
+Info 51   [14:25:20.341] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 52   [14:25:20.420] Finishing updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Version: 4 structureChanged: false structureIsReused:: Completely Elapsed: 78.23149999976158ms
+Info 53   [14:25:20.420] Different program with same set of files
+Info 54   [14:25:20.422] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 55   [14:25:20.471] Finishing updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Version: 5 structureChanged: false structureIsReused:: Completely Elapsed: 49.306099995970726ms
+Info 56   [14:25:20.472] Different program with same set of files
+Info 57   [14:28:24.220] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 58   [14:28:24.287] Finishing updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Version: 6 structureChanged: false structureIsReused:: Completely Elapsed: 66.89190000295639ms
+Info 59   [14:28:24.287] Different program with same set of files
+Info 60   [14:28:24.426] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 61   [14:28:24.610] Finishing updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Version: 7 structureChanged: false structureIsReused:: Completely Elapsed: 182.9362999945879ms
+Info 62   [14:28:24.610] Different program with same set of files
+Info 63   [14:28:58.299] DirectoryWatcher:: Triggered with c:/Interview/The Big Phone Store/todo/src/store/#index.js# :: WatchInfo: c:/Interview/The Big Phone Store/todo/src 1 undefined Project: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Failed Lookup Locations
+Info 64   [14:28:58.303] Elapsed:: 3.8880999982357025ms DirectoryWatcher:: Triggered with c:/Interview/The Big Phone Store/todo/src/store/#index.js# :: WatchInfo: c:/Interview/The Big Phone Store/todo/src 1 undefined Project: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Failed Lookup Locations
+Info 65   [14:28:58.304] DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/src/store/#index.js# :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
+Info 66   [14:28:58.306] Project: c:/Interview/The Big Phone Store/todo/jsconfig.json Detected file add/remove of non supported extension: c:/interview/the big phone store/todo/src/store/#index.js#
+Info 67   [14:28:58.306] Elapsed:: 1.137599989771843ms DirectoryWatcher:: Triggered with c:/interview/the big phone store/todo/src/store/#index.js# :: WatchInfo: c:/interview/the big phone store/todo 1 undefined Config: c:/Interview/The Big Phone Store/todo/jsconfig.json WatchType: Wild card directory
