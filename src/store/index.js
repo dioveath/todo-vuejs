@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { v4 as uuidv4 } from 'uuid';
 
 Vue.use(Vuex);
 
@@ -7,29 +8,29 @@ export default new Vuex.Store({
   state: {
     todos: [
       {
+        id: uuidv4(),
         isComplete: false,
         title: "Fill up the water tank!",
-        dueDate: "02/15/2022",
+        dueDate: "2023-02-15",
       },
       {
+        id: uuidv4(),
         isComplete: false,
         title: "Customize the UIs!",
-        dueDate: "02/15/2022",
+        dueDate: "2023-02-15",
       },
     ],
-  },
-  getters: {
-    getTodos: (state) => state.deleteTodo,
   },
   actions: {
     addTodo({ commit }, todo) {
       commit("add_todo", todo);
     },
     updateTodo({ commit }, todo) {
+      console.log('update action...');
       commit("update_todo", todo);
     },
-    deleteTodo({ commit }, title) {
-      commit("delete_todo", title);
+    deleteTodo({ commit }, id) {
+      commit("delete_todo", id);
     },
   },
   mutations: {
@@ -37,12 +38,21 @@ export default new Vuex.Store({
       state.todos.push(todo);
     },
     update_todo(state, todo) {
-      const idx = state.todos.findIndex((t) => t.title === todo.title);
-      if (idx === -1) return;
-      state.todos[idx] = todo;
+      console.log('update mutation....');
+      if(!todo?.id) { 
+        console.error("not valid id");
+        return;
+       }
+      const idx = state.todos.findIndex((t) => t.id === todo.id);
+      if (idx === -1) { 
+        console.error("couldn't find with the given id");
+        return;
+      }
+      Object.assign(state.todos[idx], todo);
+      console.log("updated successfully!");
     },
-    delete_todo(state, title) {
-      state.todos = state.todos.filter((t) => t.title !== title);
+    delete_todo(state, id) {
+      state.todos = state.todos.filter((t) => t.id !== id);
     },
   },
 });

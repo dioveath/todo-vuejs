@@ -1,0 +1,44 @@
+Info 0    [12:35:50.740] Starting TS Server
+Info 1    [12:35:50.746] Version: 4.6.4
+Info 2    [12:35:50.746] Arguments: C:\Program Files\nodejs\node.exe c:\Users\raisa\AppData\Roaming\npm\node_modules\typescript\lib\tsserver.js --logFile c:\Interview\The Big Phone Store\todo\.log\tsserver.log --logVerbosity info --cancellationPipeName C:\Users\raisa\AppData\Local\Temp\b4c4625414872ffe49fd65bf0f0e8df9\tscancellation*
+Info 3    [12:35:50.746] Platform: win32 NodeVersion: 16 CaseSensitive: false
+Info 4    [12:35:50.746] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [12:35:50.771] Format host information updated
+Info 6    [12:35:51.461] Search path: c:/Interview/The Big Phone Store/todo/src/store
+Info 7    [12:35:51.463] For info: c:/Interview/The Big Phone Store/todo/src/store/index.js :: Config file name: c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 8    [12:35:51.464] Creating configuration project c:/Interview/The Big Phone Store/todo/jsconfig.json
+Info 9    [12:35:51.494] Config: c:/Interview/The Big Phone Store/todo/jsconfig.json : {
+ "rootNames": [
+  "c:/Interview/The Big Phone Store/todo/babel.config.js",
+  "c:/Interview/The Big Phone Store/todo/postcss.config.js",
+  "c:/Interview/The Big Phone Store/todo/tailwind.config.js",
+  "c:/Interview/The Big Phone Store/todo/vue.config.js",
+  "c:/Interview/The Big Phone Store/todo/src/main.js",
+  "c:/Interview/The Big Phone Store/todo/src/store/index.js"
+ ],
+ "options": {
+  "allowJs": true,
+  "maxNodeModuleJsDepth": 2,
+  "allowSyntheticDefaultImports": true,
+  "skipLibCheck": true,
+  "noEmit": true,
+  "target": 1,
+  "module": 99,
+  "baseUrl": "c:/Interview/The Big Phone Store/todo",
+  "moduleResolution": 2,
+  "paths": {
+   "@/*": [
+    "src/*"
+   ]
+  },
+  "lib": [
+   "lib.esnext.d.ts",
+   "lib.dom.d.ts",
+   "lib.dom.iterable.d.ts",
+   "lib.scripthost.d.ts"
+  ],
+  "pathsBasePath": "c:/Interview/The Big Phone Store/todo",
+  "configFilePath": "c:/Interview/The Big Phone Store/todo/jsconfig.json"
+ }
+}
+Info 10   [12:35:51.602] Starting updateGraphWorker: Project: c:/Interview/The Big Phone Store/todo/jsconfig.json

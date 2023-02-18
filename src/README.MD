@@ -1,9 +1,9 @@
 ## Create a To Do List application using VueJS or NuxtJS.
 
 ### CRUD Features:
-- Option to Create To Do task.
-- Option to Update To Do task.
-- Option to Delete To Do task (confirmation modal / pop-up).
+- Option to Create To Do task. (done)
+- Option to Update To Do task. (done)
+- Option to Delete To Do task (confirmation modal / pop-up). (done)
 - Option to View all To Do tasks (only pending).
 
 ### Other Features:
