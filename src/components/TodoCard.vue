@@ -3,7 +3,7 @@
         <UpdateTodo :todo="todo" @toggle-event="toggleUpdateDialog" v-if="showUpdate"/>
         <DeleteTodo :todo="todo" @toggle-event="toggleDeleteDialog" v-if="showDelete" />
         <div class="w-full flex flex-wrap justify-between items-center py-2 px-4"
-            :class="todo.isComplete ? 'bg-green-500' : 'bg-gray-400'">
+            :class="todo.isComplete ? 'bg-green-500' : isDue ? 'bg-red-500' : 'bg-gray-400'">
             <div class="flex gap-2 items-center">
                 <input type="checkbox" id="todoCheck" v-model="checkComplete" @change="changeComplete">
                 <p class="text-xs text-gray-900"> {{ todo.dueDate }}</p>
@@ -13,6 +13,9 @@
                 <button class="hover:text-white"> <font-awesome-icon icon="fa-solid fa-pen-to-square"
                         @click="toggleUpdateDialog" />
                 </button>
+                <button class="hover:text-white"> <font-awesome-icon icon="fa-solid fa-copy"
+                        @click="duplicateTodo" />
+                </button>                
                 <button class="hover:text-red-700"> <font-awesome-icon icon="fa-solid fa-trash"
                         @click="toggleDeleteDialog" />
                 </button>
@@ -41,6 +44,13 @@ export default {
             showUpdate: false,
             showDelete: false,
         };
+    }, 
+    computed: {
+        isDue (){
+            const dueTime = new Date(this.todo.dueDate).getTime();
+            const nowTime = new Date().getTime();
+            return nowTime > dueTime;
+        }
     },
     watch: { 
         $props: {
@@ -50,9 +60,14 @@ export default {
                 this.checkComplete = newProps.todo.isComplete;
             }
         }
-    },
+    },        
     methods: {
-        ...mapActions(["updateTodo", "deleteTodo"]),
+        ...mapActions(["updateTodo", "deleteTodo", "addTodo"]),
+        duplicateTodo(){
+            // eslint-disable-next-line no-unused-vars
+            const { id, ...copyTodo } = this.todo;
+            this.addTodo(copyTodo);
+        },
         changeComplete() {
             // eslint-disable-next-line no-unused-vars
             const { isComplete, ...rest } = this.todo;

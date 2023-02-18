@@ -48,6 +48,8 @@ export default new Vuex.Store({
   },
   mutations: {
     add_todo(state, todo) {
+      // validate todo
+      todo.id = uuidv4();
       state.todos.push(todo);
     },
     update_todo(state, todo) {

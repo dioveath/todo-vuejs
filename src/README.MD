@@ -8,16 +8,16 @@
 
 ### Other Features:
 - Mark task as complete. (done)
-- Duplicate the task.
-- Set due date for the task.
+- Duplicate the task. (done)
+- Set due date for the task. (done)
 - Option to view all the completed tasks. (done)
-- Task if past the due date and not marked as complete (highlight task in red).
+- Task if past the due date and not marked as complete (highlight task in red). (done)
 - Demonstrate 
 
 ### Things to note:
-- VueJS 2 must be used.
-- VueX must be used.
-- TailwindCSS must be used.
+- VueJS 2 must be used. (checked)
+- VueX must be used. (checked)
+- TailwindCSS must be used. (checked)
 - Do form validations.
 - Demonstrate mobile responsive UI/UX design.
 - Please provide brief "read me" describing how to run your application.

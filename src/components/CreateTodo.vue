@@ -21,7 +21,6 @@
 
 <script>
 import { mapActions } from 'vuex';
-import { v4 as uuidv4 } from 'uuid';
 
 export default {
     name: 'EditTask',
@@ -38,7 +37,6 @@ export default {
         ...mapActions(['addTodo']),
         addNewTodo(){
             const newTodo = {
-                id: uuidv4(),
                 title: this.title,
                 dueDate: this.deadline,
                 isComplete: false,
