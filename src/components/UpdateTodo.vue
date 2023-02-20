@@ -5,17 +5,6 @@
                 <h2> Update Todo </h2>
                 <font-awesome-icon class="text-white" icon="fa-solid fa-xmark" @click="onCancelClick" />
             </div>
-
-            <!-- <div class="flex">
-                <label for="dueDate"> Deadline </label>
-                <input type="date" v-model="dTodo.dueDate" />
-            </div>
-            <div class="flex">
-                <label for="todoTitle"> Title </label>
-                <input type="text" v-model="dTodo.title" />
-            </div>
-            <button class="w-full bg-blue-500 py-2" @click="updateThisTodo"> Update </button> -->
-
             <ValidationObserver v-slot="{ invalid }">
                 <form @submit.prevent="updateThisTodo">
                     <ValidationProvider rules="dueDate" v-slot="{ errors }">

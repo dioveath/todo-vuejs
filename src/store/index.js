@@ -7,18 +7,6 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     todos: [
-      {
-        id: uuidv4(),
-        isComplete: false,
-        title: "Fill up the water tank!",
-        dueDate: "2023-02-15",
-      },
-      {
-        id: uuidv4(),
-        isComplete: false,
-        title: "Customize the UIs!",
-        dueDate: "2023-02-15",
-      },
     ],
   },
   getters: {
@@ -28,8 +16,10 @@ export default new Vuex.Store({
     dueTodos: (state) => { 
       return state.todos.filter(todo => {
         if(todo.isComplete) return false;
-        const dueTime = new Date(todo.dueDate).getTime();
-        const nowTime = new Date().getTime();
+        const dueTime = new Date(todo.dueDate);
+        const nowTime = new Date();
+        dueTime.setHours(0,0,0,0);
+        nowTime.setHours(0,0,0,0);
         return nowTime > dueTime;
       }); 
     },
@@ -47,6 +37,11 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    initialize_store(state) {
+      if(localStorage.getItem('store')){
+        this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem('store'))));
+      }
+    },
     add_todo(state, todo) {
       // validate todo
       todo.id = uuidv4();

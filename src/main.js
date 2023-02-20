@@ -23,7 +23,12 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false
 
+store.subscribe((mutation, state) => { localStorage.setItem('store', JSON.stringify(state)); });
+
 new Vue({
   store: store,
+  beforeCreate(){
+    this.$store.commit('initialize_store');
+  },
   render: h => h(App),
 }).$mount('#app')

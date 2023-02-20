@@ -8,6 +8,7 @@
             </div>
             <div class="w-full flex flex-wrap justify-between items-center my-2 gap-4">
                 <input type="text" class="text-black bg-gray-300 rounded-sm flex-1 px-4 py-2"
+                    id="search"
                     v-model="search"
                     placeholder="Search for todos..!">
             </div>

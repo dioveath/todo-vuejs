@@ -12,7 +12,7 @@
 - Set due date for the task. (done)
 - Option to view all the completed tasks. (done)
 - Task if past the due date and not marked as complete (highlight task in red). (done)
-- Demonstrate 
+- Demonstrate
 
 ### Things to note:
 - VueJS 2 must be used. (checked)

@@ -6,14 +6,14 @@
             :class="todo.isComplete ? 'bg-green-500' : isDue ? 'bg-red-500' : 'bg-gray-400'">
             <div class="flex gap-2 items-center">
                 <input type="checkbox" id="todoCheck" v-model="checkComplete" @change="changeComplete">
-                <p class="text-xs text-gray-900"> {{ todo.dueDate }}</p>
-                <p> {{ todo.title }} </p>
+                <p id="duedate" class="text-xs text-gray-900"> {{ todo.dueDate }}</p>
+                <p id="title"> {{ todo.title }} </p>
             </div>
             <div class="flex gap-4">
                 <button class="hover:text-white"> <font-awesome-icon icon="fa-solid fa-pen-to-square"
                         @click="toggleUpdateDialog" />
                 </button>
-                <button class="hover:text-white"> <font-awesome-icon icon="fa-solid fa-copy"
+                <button id="duplicateButton" class="hover:text-white"> <font-awesome-icon icon="fa-solid fa-copy"
                         @click="duplicateTodo" />
                 </button>                
                 <button class="hover:text-red-700"> <font-awesome-icon icon="fa-solid fa-trash"
@@ -47,8 +47,10 @@ export default {
     }, 
     computed: {
         isDue (){
-            const dueTime = new Date(this.todo.dueDate).getTime();
-            const nowTime = new Date().getTime();
+            const dueTime = new Date(this.todo.dueDate);
+            const nowTime = new Date();
+            dueTime.setHours(0,0,0,0);
+            nowTime.setHours(0,0,0,0);            
             return nowTime > dueTime;
         }
     },
