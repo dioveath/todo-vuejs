@@ -6,24 +6,23 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    todos: [
-    ],
+    theme: "light",
+    todos: [],
   },
   getters: {
-    getTodoById: (state) => (id) => state.todos.find(todo => todo.id === id),
-    pendingTodos: (state) => state.todos.filter(t => !t.isComplete),
-    completedTodos: (state) => state.todos.filter(t => t.isComplete),    
-    dueTodos: (state) => { 
-      return state.todos.filter(todo => {
-        if(todo.isComplete) return false;
+    getTodoById: (state) => (id) => state.todos.find((todo) => todo.id === id),
+    pendingTodos: (state) => state.todos.filter((t) => !t.isComplete),
+    completedTodos: (state) => state.todos.filter((t) => t.isComplete),
+    dueTodos: (state) => {
+      return state.todos.filter((todo) => {
+        if (todo.isComplete) return false;
         const dueTime = new Date(todo.dueDate);
         const nowTime = new Date();
-        dueTime.setHours(0,0,0,0);
-        nowTime.setHours(0,0,0,0);
+        dueTime.setHours(0, 0, 0, 0);
+        nowTime.setHours(0, 0, 0, 0);
         return nowTime > dueTime;
-      }); 
+      });
     },
-    
   },
   actions: {
     addTodo({ commit }, todo) {
@@ -35,11 +34,16 @@ export default new Vuex.Store({
     deleteTodo({ commit }, id) {
       commit("delete_todo", id);
     },
+    changeTheme({ commit }, theme) {
+      commit("change_theme", theme);
+    },
   },
   mutations: {
     initialize_store(state) {
-      if(localStorage.getItem('store')){
-        this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem('store'))));
+      if (localStorage.getItem("store")) {
+        this.replaceState(
+          Object.assign(state, JSON.parse(localStorage.getItem("store")))
+        );
       }
     },
     add_todo(state, todo) {
@@ -61,6 +65,16 @@ export default new Vuex.Store({
     },
     delete_todo(state, id) {
       state.todos = state.todos.filter((t) => t.id !== id);
+    },
+    change_theme(state, theme) {
+      switch (theme) {
+        case "dark":
+          state.theme = "dark";
+          break;
+        case "light":
+        default:
+          state.theme = "light";
+      }
     },
   },
 });

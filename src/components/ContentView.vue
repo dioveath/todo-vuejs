@@ -1,36 +1,39 @@
 <template>
-    <div class="w-full flex flex-wrap px-4 md:px-32 gap-4">
+    <div class="w-full flex flex-wrap px-4 md:px-32 gap-4 mt-2 pb-4">
         <CreateTodo @toggle-event="toggleShow" v-if="isOpen"/>
         <div class="w-full h-full flex-1">
             <div class="w-full min-w-max flex flex-wrap justify-between items-center my-2 gap-4">
                 <h2 class="font-bold text-lg"> TODOS </h2>
-                <button class="text-white bg-blue-500 rounded-sm px-4 py-2" @click="toggleShow"> Add Todo </button>
+                <button class="text-white bg-blue-800 rounded-sm px-4 py-2" @click="toggleShow"> Add Todo </button>
             </div>
             <div class="w-full flex flex-wrap justify-between items-center my-2 gap-4">
-                <input type="text" class="text-black bg-gray-300 rounded-sm flex-1 px-4 py-2"
+                <input type="text" class="text-black bg-gray-300 dark:bg-gray-100 rounded-sm flex-1 px-4 py-2 outline-none"
                     id="search"
                     v-model="search"
                     placeholder="Search for todos..!">
             </div>
             <div class="w-full flex flex-wrap justify-between items-center my-2 gap-4 text-sm text-gray-600">
                 <div class="flex items-center gap-4">
-                    <p class=""> Date: 02/15/2023 </p>
+                    <p class="text-gray-800 dark:text-white"> Date: 02/15/2023 </p>
                 </div>
 
-                <select name="filter" id="filterTodos" v-model="filter" @change="onFilterChange">
+                <select name="filter" id="filterTodos" v-model="filter" @change="onFilterChange" class="p-2 outline-none">
                     <option value="all">All</option>
                     <option value="pending">Pending</option>
                     <option value="completed">Completed</option>
                     <option value="due">Past Due</option>
                 </select>
             </div>
-            <div class="w-full flex flex-col">
+            <div class="w-full flex flex-col gap-2">
                 <TodoCard v-for="todo in displayTodos" v-bind:key="todo.id" :todo="todo" />
+                <p class="text-gray-500 text-center mt-4 capitalize" v-if="displayTodos.length === 0"> 
+                    {{ filter }} Todos is empty! Add todo now...!
+                </p>
             </div>
         </div>
         <div class="w-full min-w-max lg:flex-[0.25]">
-            <h2> Summary </h2>
-            <p> Total Todos: {{ totalTodos }}</p>
+            <h2 class="text-lg font-bold"> Summary </h2>
+            <p> Total Todos: {{ totalTodos }} </p>
             <p> Pending Todos: {{ pendingTodos.length }}</p>
             <p> Completed Todos: {{ completedTodos.length }}</p>
             <p> Past Due Todos: {{ dueTodos.length }}</p>

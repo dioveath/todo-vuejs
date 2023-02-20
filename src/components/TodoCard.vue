@@ -2,21 +2,21 @@
     <div class="w-full flex flex-col">
         <UpdateTodo :todo="todo" @toggle-event="toggleUpdateDialog" v-if="showUpdate"/>
         <DeleteTodo :todo="todo" @toggle-event="toggleDeleteDialog" v-if="showDelete" />
-        <div class="w-full flex flex-wrap justify-between items-center py-2 px-4"
-            :class="todo.isComplete ? 'bg-green-500' : isDue ? 'bg-red-500' : 'bg-gray-400'">
+        <div class="w-full flex flex-wrap justify-between items-center py-2 px-4 border-l-4 bg-gray-200 dark:bg-slate-500 rounded-sm gap-2 hover:cursor-default hover:scale-[101%] transition-all"
+            :class="todo.isComplete ? 'border-green-500' : isDue ? 'border-red-500' : 'border-gray-400'">
             <div class="flex gap-2 items-center">
                 <input type="checkbox" id="todoCheck" v-model="checkComplete" @change="changeComplete">
-                <p id="duedate" class="text-xs text-gray-900"> {{ todo.dueDate }}</p>
+                <p id="duedate" class="text-xs text-gray-900 dark:text-gray-100"> {{ todo.dueDate }}</p>
                 <p id="title"> {{ todo.title }} </p>
             </div>
             <div class="flex gap-4">
-                <button class="hover:text-white"> <font-awesome-icon icon="fa-solid fa-pen-to-square"
+                <button class="hover:text-white text-sky-600 dark:text-sky-200"> <font-awesome-icon icon="fa-solid fa-pen-to-square"
                         @click="toggleUpdateDialog" />
                 </button>
-                <button id="duplicateButton" class="hover:text-white"> <font-awesome-icon icon="fa-solid fa-copy"
+                <button id="duplicateButton" class="hover:text-white text-amber-600 dark:text-amber-200"> <font-awesome-icon icon="fa-solid fa-copy"
                         @click="duplicateTodo" />
                 </button>                
-                <button class="hover:text-red-700"> <font-awesome-icon icon="fa-solid fa-trash"
+                <button class="text-red-500 dark:text-red-300"> <font-awesome-icon icon="fa-solid fa-trash"
                         @click="toggleDeleteDialog" />
                 </button>
             </div>
