@@ -19,7 +19,6 @@ extend("title", {
 
 extend("dueDate", {
   async validate(value) {
-    // const nowDate = new Date().toLocaleString().split(",")[0];
     const yupSchema = yup.date().required();
     try {
       await yupSchema.validate(value);
