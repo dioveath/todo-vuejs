@@ -1,6 +1,22 @@
 # todo
 Todo Web App using VueJs & Vuex for state management. 
 
+<p align="center">
+    <img src="public/demo.png" alt="Todo VueJs Demo"/>
+</p>
+
+
+### Techs/Libraries/Packages used,
+| Techs/Libraries/Packages | Description        |
+|--------------------------|--------------------|
+| Vue                      | JS Framework       | 
+| Vuex                     | State Management   |
+| Vee Validate + Yup       | Form Validation    |
+| Font Awesome Icons       | Icons              |
+| TailwindCSS              | Theming & Styling  |
+| Local Storage            | Persistent Storage |
+| Jest                     | Testing            |
+
 Check out the live deployed preview of the app.
 - [Live Link](https://mytodosdone.netlify.app)
 
